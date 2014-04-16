@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<fcntl.h>
+#include<errno.h>
 
 const char *test_file = "/Users/pabitraadhikari/Desktop/test_lock";
 
@@ -21,7 +22,7 @@ int main(){
         exit(EXIT_FAILURE);
     }
     
-    //put some data in the file
+  //put some data in the file
     for(byte_count = 0; byte_count < 100; byte_count++){
         (void)write(file_desc, byte_to_write, 1);
     }
